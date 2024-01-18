@@ -37,7 +37,7 @@ public class BG : MonoBehaviour
 
     void BackSpeedCalculate(int backCount)
     {
-        for (int i = 0; i < backCount; i++) // find the farhthest background
+        for (int i = 0; i < backCount; i++) 
         {
             if ((backgrounds[i].transform.position.z - cam.position.z) > farthestBack)
             {
@@ -46,9 +46,9 @@ public class BG : MonoBehaviour
 
         }
 
-        for (int i = 0; i < backCount; i++) // set the speed of backgrounds
+        for (int i = 0; i < backCount; i++) 
         {
-            backSpeed[i] = 1 - (backgrounds[i].transform.position.z - cam.position.z) / farthestBack;
+            backSpeed[i] = 1 - (backgrounds[i].transform.position.z - cam.position.z) /;
         }
     }
 
@@ -63,7 +63,7 @@ public class BG : MonoBehaviour
         for (int i = 0; i < backgrounds.Length; i++)
         {
             float speedX = backSpeed[i] * parallaxSpeed;
-            float speedY = speedX / 2;  // if you close Y movement , set to 0
+            float speedY = speedX / 2;  
             mat[i].SetTextureOffset("_MainTex", new Vector2(distance.x * speedX, distance.y * speedY));
         }
     }
